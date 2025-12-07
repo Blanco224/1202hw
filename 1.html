@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>勤益科大資訊管理系</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #004b8d;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        .menu-icon {
+            font-size: 24px;
+            cursor: pointer;
+            position: relative;
+            z-index: 1001;
+        }
+        nav {
+            position: fixed;
+            top: 60px;
+            left: 0;
+            width: 200px;
+            background-color: #003566;
+            display: none;
+            z-index: 999;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav li {
+            padding: 12px;
+            border-bottom: 1px solid #002244;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+        .content {
+            padding-top: 80px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            var nav = document.getElementById('nav-menu');
+            nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function closeMenu() {
+            var nav = document.getElementById('nav-menu');
+            nav.style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <h2 style="margin:0; flex:1; text-align:center;">資訊管理系</h2>
+        <div style="width:24px;"></div> <!-- 用來平衡左側漢堡icon -->
+    </header>
+
+    <nav id="nav-menu">
+        <ul>
+            <li><a href="#about" onclick="closeMenu()">關於本系</a></li>
+            <li><a href="#courses" onclick="closeMenu()">課程內容</a></li>
+            <li><a href="#teacher" onclick="closeMenu()">師資介紹</a></li>
+            <li><a href="#contact" onclick="closeMenu()">聯絡我們</a></li>
+        </ul>
+    </nav>
+
+    <div class="content" id="about">
+        <h3>關於本系</h3>
+        <p>本系培養資訊管理專業人才，重視理論與實務結合。</p>
+        <a href="關於本系.html">點我看更多關於本系</a>
+    </div>
+
+    <div class="content" id="courses">
+        <h3>課程內容</h3>
+        <ul>
+            <li>資料庫管理</li>
+            <li>資訊系統分析與設計</li>
+            <li>企業資源規劃</li>
+            <li>程式設計</li>
+        </ul>
+        <a href="課程資訊.html">點我看更多課程資訊</a>
+    </div>
+
+    <div class="content" id="outline">
+        <h3>師資介紹</h3>      
+        <p>師資的基本資訊、專業背景、研究方向以及教學特色。</p>
+        <a href="師資介紹.html">點我看更多師資介紹</a>
+    </div>
+
+    <div class="content" id="contact">
+        <h3>聯絡我們</h3>
+        <p>Email: mis@ncut.edu.tw</p>
+    </div>
+</body>
+</html>
