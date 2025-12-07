@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>資訊管理系-關於本系</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #004b8d;
+        color: white;
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .content {
+        padding-top: 80px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .menu-list {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+
+    .menu-list div, .menu-list a {
+        padding: 10px 20px;
+        background-color: #003566;
+        color: white;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background 0.3s;
+    }
+
+    .menu-list div:hover, .menu-list a:hover {
+        background-color: #002244;
+    }
+
+    .section-content {
+        display: none;
+        margin-top: 10px;
+        padding: 10px;
+        border-left: 3px solid #004b8d;
+        background-color: #f0f0f0;
+    }
+
+    .teacher-card {
+        width: 90%;
+        margin: 20px auto;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        padding: 20px;
+        display: flex;
+        gap: 20px;
+        background: white;
+    }
+
+    .teacher-img {
+        width: 140px;
+        height: 180px;
+        border-radius: 6px;
+        object-fit: cover;
+    }
+
+    .teacher-info {
+        flex: 1;
+    }
+
+    .teacher-name {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .teacher-info p {
+        margin: 4px 0;
+        line-height: 1.5;
+    }
+</style>
+
+<script>
+function toggleSection(id) {
+    const sections = document.querySelectorAll('.section-content');
+    sections.forEach(s => {
+        s.style.display = (s.id === id && s.style.display !== 'block') ? 'block' : 'none';
+    });
+}
+</script>
+</head>
+
+<body>
+
+<header>
+    資訊管理系-關於本系
+</header>
+
+<div class="content">
+
+    <div class="menu-list">
+        <div onclick="toggleSection('teacher')">專任教師</div>
+        <div onclick="toggleSection('office')">系辦公室</div>
+        <div onclick="toggleSection('SP')">輔導教官</div>
+        <div onclick="toggleSection('where')">系所位置</div>
+        <a href="首頁.html">回到首頁</a>
+    </div>
+
+    <!-- 專任教師 -->
+    <div id="teacher" class="section-content">
+        <h3>專任教師</h3>
+
+        <div class="teacher-card">
+            <img src="系主任.jpg" class="teacher-img">
+            <div class="teacher-info">
+                <div class="teacher-name">張裕幸　主任</div>
+                <p><strong>職稱：</strong>教授</p>
+                <p><strong>辦公室：</strong>M405</p>
+                <p><strong>信箱：</strong>eric_chang@ncut.edu.tw</p>
+                <p><strong>分機：</strong>7936</p>
+                <p><strong>學歷：</strong>國立台灣科技大學 博士</p>
+                <p><strong>研究方向：</strong>AR/VR、AI、AIoT</p>
+            </div>
+        </div>
+
+        <div class="teacher-card">
+            <img src="老師.jpg" class="teacher-img">
+            <div class="teacher-info">
+                <div class="teacher-name">董俊良　老師</div>
+                <p><strong>職稱：</strong>教授</p>
+                <p><strong>辦公室：</strong>M411</p>
+                <p><strong>信箱：</strong>cltung@ncut.edu.tw</p>
+                <p><strong>分機：</strong>7929</p>
+                <p><strong>學歷：</strong>東海大學 博士</p>
+                <p><strong>研究方向：</strong>非結構性機率學習</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 系辦公室 -->
+    <div id="office" class="section-content">
+        <h3>系辦公室</h3>
+
+        <div class="teacher-card">
+            <img src="系辦.jpg" class="teacher-img">
+            <div class="teacher-info">
+                <div class="teacher-name">巫秀文 小姐</div>
+                <p><strong>職稱：</strong>助教</p>
+                <p><strong>信箱：</strong>wuhw@ncut.edu.tw</p>
+                <p><strong>電話：</strong>04-2392-4505 #7912</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 輔導教官 -->
+    <div id="SP" class="section-content">
+        <h3>輔導教官</h3>
+
+        <div class="teacher-card">
+            <img src="教官.jpg" class="teacher-img">
+            <div class="teacher-info">
+                <div class="teacher-name">許世坤 先生</div>
+                <p><strong>職稱：</strong>校安輔導人員</p>
+                <p><strong>信箱：</strong>hsk0125@ncut.edu.tw</p>
+                <p><strong>電話：</strong>04-2392-4505 #2312</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 系所位置 -->
+    <div id="where" class="section-content">
+        <h3>系所位置</h3>
+        <p>勤益科大管理館5樓</p><br>
+        <img src="map.png" alt="管理館地圖">
+    </div>
+
+</div>
+</body>
+</html>
